@@ -1,0 +1,33 @@
+.tabs__content__item__flightplan{
+    background: $bg-main-color;
+    &__info{
+        margin: 0 auto;
+        max-width: 1100px;
+        padding: 40px;
+        background: $white;
+        border-radius: 20px;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+            &__wrapper{
+                background-color: #D9D9D9;
+                border-radius: 20px;
+                padding: 20px;
+                &__image{
+                    padding-top: 9px;
+                }
+                &__title{
+                    color: $main-text-color;
+                    font-weight: 700;
+                    font-size: 16px;
+                }
+                &__text{
+                    display: flex;
+                    gap: 42px;
+                    padding: 28px 20px;
+                    color: $main-text-color;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
