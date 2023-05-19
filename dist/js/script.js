@@ -38,8 +38,28 @@ tabsParent.addEventListener('click', (e)=>{
     }
 })
 
+/* ANIMATION */
 
+const btnToStart = document.querySelector('.simulation__button');
+const checkboxAirport = document.querySelectorAll('.checkbox-round__airport');
+const checkboxMap = document.querySelectorAll('.checkbox-round__map');
 
+function startSimulation () {
+    btnToStart.addEventListener('click', () => {
+        checkboxAirport.forEach((i)=>{
+            if(i.checked){
+                return console.log(i);
+                }
+        })
+        checkboxMap.forEach((i) => {
+            if(i.checked){
+                return console.log(i)
+            }
+        })
+    })
+}
+
+startSimulation()
 
 
 
