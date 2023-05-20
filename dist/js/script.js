@@ -1,65 +1,138 @@
 /* DATE */
-const time = setInterval(function() {
+const time = setInterval(function () {
     const date = new Date();
-    document.getElementById("time").innerHTML = ('UTC: ' + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
+    document.getElementById("time").innerHTML = ('UTC: ' + getZero(date.getHours()) + ":" + getZero(date.getMinutes()) + ":" + getZero(date.getSeconds()));
 }, 1000);
 
+function getZero(num) {
+    if (num >= 0 && num < 10) {
+        return `0${num}`
+    } else {
+        return num
+    }
+}
+
 /* TABS */
-const tabsParent = document.querySelector('.main__content__tabs__wrapper')
-const tabsContent = document.querySelectorAll('.tabs__content__item')
-const tabs = document.querySelectorAll('.main__content__tabs__wrapper__item')
+const tabsParent = document.querySelector('.main__tabs__wrapper')
+const tabs = document.querySelectorAll('.main__tabs__item')
+const tabsContent = document.querySelectorAll('.tab-content')
 
 function hideTabsContent() {
-    tabsContent.forEach((item)=>{
-        item.style.cssText = 'display: none';
+    tabsContent.forEach((item) => {
+        item.style.cssText = 'display: none;';
     })
 
     tabs.forEach((item) => {
-        item.classList.remove('item_clicked')
+        item.classList.remove('main__tabs__item_active');
     })
 }
 
-function showTabContent(i=0) {
-    tabsContent[i].style.cssText = 'display: block';
-    tabs[i].classList.add('item_clicked')
+function showTabContent(i = 0) {
+    tabsContent[i].style.cssText = 'display: flex;';
+    tabs[i].classList.add('main__tabs__item_active');
 }
 
 hideTabsContent();
 showTabContent();
 
-tabsParent.addEventListener('click', (e)=>{
-    if (e.target&&e.target.matches('div.main__content__tabs__wrapper__item')){
-        tabs.forEach((item, i)=>{
+tabsParent.addEventListener('click', (e) => {
+    if (e.target && e.target.matches('div.main__tabs__item')) {
+        tabs.forEach((item, i) => {
             if (e.target == item) {
                 hideTabsContent();
                 showTabContent(i);
             }
         })
     }
+});
+
+const startSimulationBTN = document.querySelector('.tab-content__button'),
+    modalOvelay = document.querySelector('.overlay'),
+    modalClose = document.querySelector('.modal__cross'),
+    cities = document.querySelectorAll('[data-simulation]'),
+    gifs = document.querySelectorAll('[data-simpic]'),
+    modalText = document.querySelector('.modal__text')
+
+startSimulationBTN.addEventListener('click', () => {
+    openModal()
+    activeGifs = []
+
+    cities.forEach((item, i) => {
+        if (item.checked == true) {
+            gifs[i].style.display = 'block'
+        }
+
+        console.log(item.checked, i)
+        activeGifs.push(item.checked)
+    })
+
+    const sum = activeGifs.reduce((partialSum, a) => partialSum + a, 0);
+    console.log(sum);
+
+    if (sum > 1) {
+        gifs.forEach(item => {
+            item.style.display = 'none'
+        });
+
+        modalText.innerHTML = 'You can not choose more than one city airport.<br>To start simulation please choose only 1.'
+    };
+
+    if (sum < 1) {
+        modalText.innerHTML = 'To start simulation please choose the city airport.'
+    }
+
+
+
 })
+
+modalClose.addEventListener('click', () => {
+    closeModal()
+})
+
+window.addEventListener('click', (e) => {
+    if (e.target == modalOvelay) {
+        closeModal()
+    }
+});
+
+function openModal() {
+    modalOvelay.style.display = 'block'
+    // modal scroll lock
+    // document.body.style.overflow = 'hidden'
+}
+
+function closeModal() {
+    modalOvelay.style.display = 'none'
+    gifs.forEach((item, i) => {
+        item.style.display = 'none'
+    })
+    modalText.innerHTML = ''
+    // modal scroll unlock
+    // document.body.style.overflow = ''
+}
 
 /* ANIMATION */
 
-const btnToStart = document.querySelector('.simulation__button');
-const checkboxAirport = document.querySelectorAll('.checkbox-round__airport');
-const checkboxMap = document.querySelectorAll('.checkbox-round__map');
+// const btnToStart = document.querySelector('.simulation__button');
+// const checkboxAirport = document.querySelectorAll('.checkbox-round__airport');
+// const checkboxMap = document.querySelectorAll('.checkbox-round__map');
 
-function startSimulation () {
-    btnToStart.addEventListener('click', () => {
-        checkboxAirport.forEach((i)=>{
-            if(i.checked){
-                return console.log(i);
-                }
-        })
-        checkboxMap.forEach((i) => {
-            if(i.checked){
-                return console.log(i)
-            }
-        })
-    })
-}
+// function startSimulation() {
+//     btnToStart.addEventListener('click', () => {
+//         checkboxAirport.forEach((i) => {
+//             if (i.checked) {
+//                 return console.log(i);
+//             }
+//         })
+//         checkboxMap.forEach((i) => {
+//             if (i.checked) {
+//                 return console.log(i)
+//             }
+//         })
+//     })
+// }
 
-startSimulation()
+// startSimulation()
 
 
 

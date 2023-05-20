@@ -11,17 +11,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    background: url('../img/promo__bg.png') center top/cover no-repeat;
+    transition: 0.5s all;
+}
 .container {
     max-width: 1140px;
     margin: 0 auto;
-    padding: 30px 0;
+    padding: 0 20px;
 }
 // blocks
 @import './blocks/main.scss';
-@import './blocks/animation.scss';
-@import './blocks/ATCLinks.scss';
-@import './blocks/FlightPlan.scss';
-@import './blocks//METAR.scss';
+@import './blocks/simulator.scss';
+@import './blocks/modal.scss';
 
 // media files
 
