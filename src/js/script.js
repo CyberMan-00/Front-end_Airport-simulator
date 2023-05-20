@@ -1,65 +1,71 @@
 /* DATE */
-const time = setInterval(function() {
+const time = setInterval(function () {
     const date = new Date();
     document.getElementById("time").innerHTML = ('UTC: ' + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
 }, 1000);
 
 /* TABS */
-const tabsParent = document.querySelector('.main__content__tabs__wrapper')
-const tabsContent = document.querySelectorAll('.tabs__content__item')
-const tabs = document.querySelectorAll('.main__content__tabs__wrapper__item')
+const tabsParent = document.querySelector('.main__tabs__wrapper')
+const tabs = document.querySelectorAll('.main__tabs__item')
+const tabsContent = document.querySelectorAll('.tab-content')
+
+console.log(tabsParent)
+console.log(tabsContent)
+console.log(tabs)
 
 function hideTabsContent() {
-    tabsContent.forEach((item)=>{
-        item.style.cssText = 'display: none';
+    tabsContent.forEach((item) => {
+        item.style.cssText = 'display: none;';
     })
 
     tabs.forEach((item) => {
-        item.classList.remove('item_clicked')
+        item.classList.remove('main__tabs__item_active');
     })
 }
 
-function showTabContent(i=0) {
-    tabsContent[i].style.cssText = 'display: block';
-    tabs[i].classList.add('item_clicked')
+function showTabContent(i = 0) {
+    tabsContent[i].style.cssText = 'display: flex;';
+    tabs[i].classList.add('main__tabs__item_active');
 }
 
 hideTabsContent();
 showTabContent();
 
-tabsParent.addEventListener('click', (e)=>{
-    if (e.target&&e.target.matches('div.main__content__tabs__wrapper__item')){
-        tabs.forEach((item, i)=>{
+
+
+tabsParent.addEventListener('click', (e) => {
+    if (e.target && e.target.matches('div.main__tabs__item')) {
+        tabs.forEach((item, i) => {
             if (e.target == item) {
                 hideTabsContent();
                 showTabContent(i);
             }
         })
     }
-})
+});
 
 /* ANIMATION */
 
-const btnToStart = document.querySelector('.simulation__button');
-const checkboxAirport = document.querySelectorAll('.checkbox-round__airport');
-const checkboxMap = document.querySelectorAll('.checkbox-round__map');
+// const btnToStart = document.querySelector('.simulation__button');
+// const checkboxAirport = document.querySelectorAll('.checkbox-round__airport');
+// const checkboxMap = document.querySelectorAll('.checkbox-round__map');
 
-function startSimulation () {
-    btnToStart.addEventListener('click', () => {
-        checkboxAirport.forEach((i)=>{
-            if(i.checked){
-                return console.log(i);
-                }
-        })
-        checkboxMap.forEach((i) => {
-            if(i.checked){
-                return console.log(i)
-            }
-        })
-    })
-}
+// function startSimulation() {
+//     btnToStart.addEventListener('click', () => {
+//         checkboxAirport.forEach((i) => {
+//             if (i.checked) {
+//                 return console.log(i);
+//             }
+//         })
+//         checkboxMap.forEach((i) => {
+//             if (i.checked) {
+//                 return console.log(i)
+//             }
+//         })
+//     })
+// }
 
-startSimulation()
+// startSimulation()
 
 
 
