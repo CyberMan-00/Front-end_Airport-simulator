@@ -13,6 +13,7 @@
 }
 body {
     background: url('../img/promo__bg.png') center top/cover no-repeat;
+    transition: 0.5s all;
 }
 .container {
     max-width: 1140px;
@@ -22,6 +23,7 @@ body {
 // blocks
 @import './blocks/main.scss';
 @import './blocks/simulator.scss';
+@import './blocks/modal.scss';
 
 // media files
 
