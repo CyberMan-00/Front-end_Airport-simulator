@@ -1,8 +1,12 @@
 /* DATE */
 const time = setInterval(function () {
-    const date = new Date();
+    let date = new Date();
+
+    date.setHours(date.getHours() - 6)
+
     document.getElementById("time").innerHTML = ('UTC: ' + getZero(date.getHours()) + ":" + getZero(date.getMinutes()) + ":" + getZero(date.getSeconds()));
 }, 1000);
+
 
 function getZero(num) {
     if (num >= 0 && num < 10) {
@@ -48,6 +52,7 @@ tabsParent.addEventListener('click', (e) => {
 
 const startSimulationBTN = document.querySelector('.tab-content__button'),
     modalOvelay = document.querySelector('.overlay'),
+    modalWindow = document.querySelector('.modal'),
     modalClose = document.querySelector('.modal__cross'),
     cities = document.querySelectorAll('[data-simulation]'),
     gifs = document.querySelectorAll('[data-simpic]'),
@@ -74,15 +79,12 @@ startSimulationBTN.addEventListener('click', () => {
             item.style.display = 'none'
         });
 
-        modalText.innerHTML = 'You can not choose more than one city airport.<br>To start simulation please choose only 1.'
+        modalText.innerHTML = 'Вы не можете выбрать более одного городского аэропорта. Для начала моделирования выберите только один.'
     };
 
     if (sum < 1) {
-        modalText.innerHTML = 'To start simulation please choose the city airport.'
+        modalText.innerHTML = 'Для начала моделирования выберите аэропорт города.'
     }
-
-
-
 })
 
 modalClose.addEventListener('click', () => {
@@ -97,6 +99,7 @@ window.addEventListener('click', (e) => {
 
 function openModal() {
     modalOvelay.style.display = 'block'
+    modalWindow.classList.add('modal__active')
     // modal scroll lock
     // document.body.style.overflow = 'hidden'
 }
@@ -106,6 +109,8 @@ function closeModal() {
     gifs.forEach((item, i) => {
         item.style.display = 'none'
     })
+
+    modalWindow.classList.remove('modal__active')
     modalText.innerHTML = ''
     // modal scroll unlock
     // document.body.style.overflow = ''
