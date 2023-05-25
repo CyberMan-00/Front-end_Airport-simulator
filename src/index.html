@@ -14,16 +14,22 @@
 </head>
 
 <body>
+
+    <div class="logo">
+        <img src="icons/logo.svg" alt="logo">
+    </div>
+
     <section class="main">
         <div class="container">
-            <h1 class="main__title">Airport Simulator</h1>
+            <h1 class="main__title">CIVIL <span>AVIA</span>TION <span>AC</span>ADEMY</h1>
+            <h2 class="main__subtitle">Simulator</h2>
             <div class="main__data" id="time"></div>
 
             <div class="main__tabs__wrapper">
-                <div class="main__tabs__item">Animation</div>
-                <div class="main__tabs__item">ATC Links</div>
-                <div class="main__tabs__item">Dispatcher’s<br>Certificate</div>
-                <div class="main__tabs__item">METAR</div>
+                <div class="main__tabs__item">Анимация</div>
+                <div class="main__tabs__item">ATC Ссылки</div>
+                <div class="main__tabs__item">Свидетельство</div>
+                <div class="main__tabs__item">Метео</div>
             </div>
         </div>
     </section>
@@ -35,27 +41,27 @@
                 <div class="tab-content">
                     <div class="tab-content__left">
                         <div class="tab-content__item">
-                            <div class="item__title">Kazakhstan Airports</div>
+                            <div class="item__title">Аэропорты</div>
                             <div class="separator"></div>
                             <div class="item__choice">
-                                <div class="txt">ASTANA</div>
+                                <div class="txt">Астана (UACC)</div>
                                 <input data-simulation id="ASTANA" type="checkbox">
                             </div>
                             <div class="item__choice">
-                                <div class="txt">ALMATY</div>
+                                <div class="txt">Алматы (UAAA)</div>
                                 <input data-simulation id='ALMATY' type="checkbox">
                             </div>
                             <div class="item__choice">
-                                <div class="txt">SHYMKENT</div>
+                                <div class="txt">Шымкент (UAII)</div>
                                 <input data-simulation id='SHYMKENT' type="checkbox">
                             </div>
                             <div class="item__choice">
-                                <div class="txt">AKTOBE</div>
+                                <div class="txt">Актобе (UATT)</div>
                                 <input data-simulation id='AKTOBE' type="checkbox">
                             </div>
                         </div>
                         <div class="tab-content__item">
-                            <div class="item__title">Map</div>
+                            <div class="item__title">Карта</div>
                             <div class="separator"></div>
                             <div class="item__choice">
                                 <div class="txt">SID</div>
@@ -66,165 +72,174 @@
                                 <input type="checkbox">
                             </div>
                         </div>
-                        <button class="tab-content__button">START SIMULATION</button>
+                        <button class="tab-content__button">СТАРТ</button>
                     </div>
                     <div class="tab-content__right tab-content__item">
-                        <div class="item__title">instructions</div>
+                        <div class="item__title">ВАЖНО</div>
                         <div class="separator"></div>
                         <div class="item__text">
-                            Lorem ipsum dolor sit amet consectetur. Et proin id vel risus nullam amet posuere. Cursus
-                            enim rhoncus aliquam dignissim velit ut. Ornare maecenas diam cras et amet pretium. Dictum
-                            sit nibh tristique egestas nisi pretium lectus mattis. Nulla varius nunc dictumst eget
-                            quisque dapibus sit sed turpis. Varius aliquam morbi id pretium posuere aliquam volutpat at.
-                            Aenean fringilla turpis nunc ultricies. Neque euismod sollicitudin in eget diam duis orci
-                            nunc.
+                            Авиадиспетчер – это специалист, контролирующий движение воздушного транспорта.
+                            Основной задачей авиадиспетчера является обеспечение безопасного, бесперебойного и
+                            упорядоченного движения воздушных судов (например, самолетов или вертолетов). Контроль над
+                            движением самолета осуществляется с момента запуска двигателя воздушного судна, до
+                            заруливания на стоянку после посадки на аэродроме пункта назначения.
+                            Этот сайт содержит информацию, предназначенную для ознакомления студентов с профессией
+                            авиадиспетчера.
                             <br><br>
-                            Integer vitae habitasse nibh in feugiat massa duis libero. At non mus non mi diam. Leo
-                            imperdiet mollis vitae urna. Tortor imperdiet fames ipsum leo morbi placerat. Quis ornare et
-                            proin euismod tristique lacus
+                            Благодаря визуальной демонстрации в «АНИМАЦИЯ» вы можете понять, как борт входит и выходит с
+                            зоны ответственности определенной диспетчерской зоны.
+                            Во вкладке «ССЫЛКИ» можно ознакомиться с нормативно-правовыми актами гражданской авиации.
+                            Благодаря им появляется основа знаний в авиации для работы в диспетчерских пунктах.
+                            Особое внимание стоит уделить «СВИДЕТЕЛЬСТВО», так как в этой части перечислены требования
+                            для получения свидетельства диспетчера.
+                            <br><br>
+                            Крайняя, но не менее важная вкладка «МЕТЕО» поможет вам с легкостью понимать
+                            метеорологическую сводку, следующих типов: METAR, TAF и т.д.
                         </div>
                     </div>
                 </div>
                 <!-- tab content -->
                 <div class="tab-content">
                     <div class="tab-content__item">
-                        <div class="item__title">List of Regulatory Acts</div>
+                        <div class="item__title">нормативно-правовые акты</div>
                         <div class="separator"></div>
                         <div class="tab-content__item__link">
-                            <div class="item__text">Law of the Republic of Kazakhstan "On the Use of Airspace of the
-                                Republic of Kazakhstan and Aviation Activities</div>
-                            <a href="https://adilet.zan.kz/rus/docs/Z100000339_">link</a>
+                            <div class="item__text">Закон Республики Казахстан «Об использовании воздушного пространства
+                                Республики Казахстан и деятельности авиации»</div>
+                            <a href="https://adilet.zan.kz/rus/docs/Z100000339_">читать</a>
                         </div>
                         <div class="tab-content__item__link">
-                            <div class="item__text">Rules of the use of airspace of the Republic of Kazakhstan</div>
-                            <a href="https://adilet.zan.kz/rus/docs/P1100000506">link</a>
+                            <div class="item__text">Правила использования воздушного пространства Республики</div>
+                            <a href="https://adilet.zan.kz/rus/docs/P1100000506">читать</a>
                         </div>
                         <div class="tab-content__item__link">
-                            <div class="item__text">Rules of flight operations in civil aviation of the Republic of
-                                Republic of Kazakhstan</div>
-                            <a href="https://adilet.zan.kz/rus/docs/V1700015852">link</a>
+                            <div class="item__text">Правила производства полетов в гражданской авиации Республики
+                                Казахстан</div>
+                            <a href="https://adilet.zan.kz/rus/docs/V1700015852">читать</a>
                         </div>
                         <div class="tab-content__item__link">
-                            <div class="item__text">Rules of meteorological support of civil aviation Republic of
-                                Kazakhstan</div>
-                            <a href="https://adilet.zan.kz/rus/docs/V170001535">link</a>
+                            <div class="item__text">Правила метеорологического обеспечения гражданской авиации
+                                Республики Казахстан</div>
+                            <a href="https://adilet.zan.kz/rus/docs/V170001535">читать</a>
                         </div>
                         <div class="tab-content__item__link">
-                            <div class="item__text">Rules of ornithological support of flights of civil aircraft in the
-                                Republic of Kazakhstan</div>
-                            <a href="https://adilet.zan.kz/rus/docs/V1500011724">link</a>
+                            <div class="item__text">Правила орнитологического обеспечения полетов гражданских воздушных
+                                судов в Республики Казахстан</div>
+                            <a href="https://adilet.zan.kz/rus/docs/V1500011724">читать</a>
                         </div>
                         <div class="tab-content__item__link">
-                            <div class="item__text">Rules of radio technical support of flights and aviation of aviation
-                                telecommunication in civil aviation</div>
-                            <a href="https://adilet.zan.kz/rus/docs/V1700015554">link</a>
+                            <div class="item__text">Правила радиотехнического обеспечения полетов и авиационной
+                                электросвязи в гражданской авиации.</div>
+                            <a href="https://adilet.zan.kz/rus/docs/V1700015554">читать</a>
                         </div>
                         <div class="tab-content__item__link">
-                            <div class="item__text">Rules of rescue support of flights on the territory of Republic of
-                                Kazakhstan</div>
-                            <a href="https://adilet.zan.kz/rus/docs/V1500012216">link</a>
+                            <div class="item__text">Правила аварийно-спасательного обеспечения полетов на территории
+                                Республики Казахстан.</div>
+                            <a href="https://adilet.zan.kz/rus/docs/V1500012216">читать</a>
                         </div>
                         <div class="tab-content__item__link">
-                            <div class="item__text">Rules on the organization of search and rescue support of flights in
-                                the In the territory of the Republic of Kazakhstan</div>
-                            <a href="https://adilet.zan.kz/rus/docs/P1100001296">link</a>
+                            <div class="item__text">Правила по организации поисково-спасательного обеспечения полетов на
+                                территории Республики Казахстан.</div>
+                            <a href="https://adilet.zan.kz/rus/docs/P1100001296">читать</a>
                         </div>
                         <div class="tab-content__item__link">
-                            <div class="item__text">Aviation safety rules</div>
-                            <a href="https://adilet.zan.kz/rus/docs/P030000746_/links">link</a>
+                            <div class="item__text">Правила авиационной безопасности</div>
+                            <a href="https://adilet.zan.kz/rus/docs/P030000746_/links">читать</a>
                         </div>
                         <div class="tab-content__item__link">
-                            <div class="item__text">Rules of professional training of aviation personnel</div>
-                            <a href="https://adilet.zan.kz/rus/docs/V1500010562">link</a>
+                            <div class="item__text">Правила профессиональной подготовки авиационного персонала</div>
+                            <a href="https://adilet.zan.kz/rus/docs/V1500010562">читать</a>
                         </div>
                         <div class="tab-content__item__link">
-                            <div class="item__text">Instruction on air traffic management and maintenance</div>
-                            <a href="https://adilet.zan.kz/rus/docs/V1100007006">link</a>
+                            <div class="item__text">Инструкция по организации и обслуживанию воздушного движения.</div>
+                            <a href="https://adilet.zan.kz/rus/docs/V1100007006">читать</a>
                         </div>
                         <div class="tab-content__item__link">
-                            <div class="item__text">Rules of phraseology for radio communication in flight operations
-                                and air traffic service air traffic service</div>
-                            <a href="https://adilet.zan.kz/rus/docs/V1000006635">link</a>
+                            <div class="item__text">Правила фразеологии радиообмена при выполнении полетов и
+                                обслуживании воздушного движения</div>
+                            <a href="https://adilet.zan.kz/rus/docs/V1000006635">читать</a>
                         </div>
                         <div class="tab-content__item__link">
-                            <div class="item__text">Collection of Aeronautical Information of the Republic of Kazakhstan
+                            <div class="item__text">Сборник Аэронавигационной информации Республики Казахстан
                             </div>
-                            <a href="https://www.ans.kz/ru/ais/eaip">link</a>
+                            <a href="https://www.ans.kz/ru/ais/eaip">читать</a>
                         </div>
                     </div>
                 </div>
                 <!-- tab content -->
                 <div class="tab-content">
                     <div class="tab-content__item">
-                        <div class="item__title">Dispatcher’s certificate</div>
+                        <div class="item__title">СВИДЕТЕЛЬСТВО ДИСПЕТЧЕРА</div>
                         <div class="separator"></div>
-                        <div class="item__text">A candidate for the ATC dispatcher certificate has the following
-                            qualifications:
+                        <div class="item__text">Кандидату на получение свидетельства диспетчера ОВД предъявляются
+                            следующие квалификационные требования:
                             <br><br>
-                            1. age - over 21 years of age;
+                            1) возраст - старше 21 года;
                             <br><br>
-                            2. valid medical certificate of class 3;
+                            2) действующее медицинское заключение 3 класса;
                             <br><br>
-                            3. Theoretical training course developed in accordance with the standard programs in a
-                            certified ATC and a demonstration of the level of theoretical knowledge in the following
-                            areas:
+                            3) прохождение курса теоретической подготовки, разработанного в соответствии с Типовыми
+                            программами, в сертифицированном АУЦ и демонстрация уровня теоретических знаний, в следующих
+                            областях:
                             <br><br>
-                            The legislation of the Republic of Kazakhstan on the use of airspace of the Republic of
-                            Kazakhstan and aviation activities, rules and regulations as they relate to air traffic
-                            service, including the rights, duties and responsibilities of the holder of the air traffic
-                            controller's qualification mark(s)
+                            законодательство Республики Казахстан об использовании воздушного пространства Республики
+                            Казахстан и деятельности авиации, правила и положения в части касающейся обслуживания
+                            воздушного движения, в том числе права, обязанности и ответственность обладателя
+                            квалификационной (ых) отметки (ок) диспетчера ОВД;
                             <br><br>
-                            principles, use and limitations of the equipment used in ATC, voice communication,
-                            information recording, data transmission, radio navigation aids, surveillance and radar
-                            systems, automatic dependent surveillance, flight plan processing, display (user interface),
-                            operational data and data on operating conditions;
+                            принципы, использование и ограничения оборудования, применяемого в ОВД, речевая связь,
+                            регистрация информации, передача данных, радионавигационные средства, наблюдение и
+                            радиолокационные системы, автоматическое зависимое наблюдение, обработка планов полета,
+                            дисплей (интерфейс пользователя), оперативные данные и данные об условиях эксплуатации;
                             <br><br>
-                            principles of flight, principles of operation and functioning of aircraft, propulsion
-                            systems and systems, characteristics of aircraft relevant to ATC;
+                            принципы полета, принципы эксплуатации и функционирования ВС, силовых установок и систем,
+                            характеристики ВС, имеющие отношение к ОВД;
+                            возможности человека, включая принципы контроля факторов угрозы и ошибок, а также подготовку
+                            по оптимизации работы группы;
                             <br><br>
-                            human capabilities, including the principles of threat and error factor control, as well as
-                            team optimization training;
+                            авиационная метеорология, применение и понимание метеорологической документации и
+                            информации, возникновение и характеристики особых явлений погоды, которые влияют на
+                            выполнение полетов и их безопасность, принцип измерения барометрической высоты;
                             <br><br>
-                            aviation meteorology, application and understanding of meteorological documentation and
-                            information, occurrence and characteristics of special weather phenomena which affect flight
-                            performance and safety, principle of barometric altitude measurement;
+                            принципы аэронавигации, принципы, ограничения и точность навигационных систем и визуальных
+                            средств;
                             <br><br>
-                            principles of air navigation, principles, limitations and accuracy of navigation systems and
-                            visual aids;
-                            <br><br>
-                            procedures for ATC, communication, radio telephony and phraseology exchange normal, abnormal
-                            1 emergency), use of appropriate aviation documentation, practical methods to ensure flight
-                            safety.
+                            процедуры ОВД, связи, радиотелефонии и обмена фразеологией (штатные, нештатные 1 аварийные),
+                            использование соответствующей авиационной документации, практические методы обеспечения
+                            безопасности полетов.
+
                         </div>
                     </div>
                 </div>
                 <!-- tab content -->
                 <div class="tab-content">
                     <div class="tab-content__item">
-                        <div class="item__title">METAR</div>
+                        <div class="item__title">Метео</div>
                         <div class="separator"></div>
                         <div class="item__text">
-                            Abbreviations and designations ATIS - automatic transmission of information in the aerodrome
-                            area;
+                            Сокращения и обозначения
                             <br><br>
-                            METAR - regular weather report;
+                            ATIS- автоматическая передача информации в районе аэродрома;
                             <br><br>
-                            TAF - aerodrome weather forecast;
+                            METAR - регулярная метеорологическая сводка погоды;
                             <br><br>
-                            GAMET - zone forecast for low-altitude flights;
+                            TAF- прогноза погоды по аэродрому;
                             <br><br>
-                            SIGMET - brief description of actual or expected certain weather phenomena along the flight
-                            route, which can affect aircraft flight safety;
+                            GAMET-зональный прогноз для полетов на малых высотах;
                             <br><br>
-                            AIRMET - brief description of actual or expected certain weather phenomena along the flight
-                            route, which were not included in the GAMET, and which may affect the aircraft flight
-                            safety.
+                            SIGMET- краткое описание фактических или ожидаемых определенных явлений погоды по маршруту
+                            полета, которые могут повлиять на безопасность полетов ВС;
+                            <br><br>
+                            AIRMET- краткое описание фактических или ожидаемых определенных явлений погоды по маршруту
+                            полета, которые не были включены в GAMET, и , которые могут повлиять на безопасность полетов
+                            ВС.
                         </div>
                         <div class="item__picture">
-                            <img src="https://upadhyaydhruv.github.io/metar.jpg" alt="metar picture">
+                            <img src="https://skywaypublic.ru/publications/images/Rasshifrovka_Metar01.jpg"
+                                alt="metar picture">
                         </div>
                         <div class="item__text">
-                            Examples:
+                            Примеры:
                             <br><br>
                             METAR: UADD 150530Z 36004MPS 330V050 9999 NSC 27/06 Q1012 NOSIG RMK QFE701/0935
                             <br><br>
