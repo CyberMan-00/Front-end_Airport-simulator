@@ -1,7 +1,7 @@
 .main {
     
     // height: 100%;
-    padding: 100px 0 40px 0;
+    padding: 20px 0 40px 0;
     &__title {
         text-align: center;
         font-size: 48px;
@@ -20,11 +20,16 @@
         color: $bg-main-color;
         text-align: center;
         margin-bottom: 40px;
+
+        filter: drop-shadow(0 0 20px black);
     }
     &__data {
         max-width: 230px;
         padding: 20px 26px;
         margin: 0 auto;
+        margin-bottom: 100px;
+
+
         text-align: center;
 
         background-color: $bg-main-color;
@@ -38,12 +43,13 @@
     &__tabs {
         &__wrapper {
             margin: 0 auto;
-            margin-top: 200px;
+            // margin-top: 200px;
+            margin-bottom: 100px;
             max-width: 950px;
-            padding: 20px;
+            padding: 7px;
 
             display: flex;
-            gap: 15px;
+            gap: 10px;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
@@ -55,7 +61,7 @@
         }
         &__item {
             
-            min-width: 150px;
+            min-width: 24%;
             height: 50px;
             
             padding: 10px 30px;

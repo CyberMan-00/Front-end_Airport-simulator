@@ -54,37 +54,62 @@ const startSimulationBTN = document.querySelector('.tab-content__button'),
     modalOvelay = document.querySelector('.overlay'),
     modalWindow = document.querySelector('.modal'),
     modalClose = document.querySelector('.modal__cross'),
-    cities = document.querySelectorAll('[data-simulation]'),
+    cities = document.querySelectorAll('[data-city]'),
+    maps = document.querySelectorAll('[data-map]'),
     gifs = document.querySelectorAll('[data-simpic]'),
     modalText = document.querySelector('.modal__text')
+
+// console.log(cities)
+// console.log(maps)
+// console.log(gifs)
 
 startSimulationBTN.addEventListener('click', () => {
     openModal()
     activeGifs = []
+    activeMaps = []
+
+    let gifSelector;
+    let mapSelector;
 
     cities.forEach((item, i) => {
         if (item.checked == true) {
-            gifs[i].style.display = 'block'
+            gifSelector = i
+            activeGifs.push(item.checked)
         }
-
-        console.log(item.checked, i)
-        activeGifs.push(item.checked)
+    })
+    maps.forEach((item, i) => {
+        if (item.checked == true) {
+            mapSelector = i
+            activeMaps.push(item.checked)
+        }
     })
 
-    const sum = activeGifs.reduce((partialSum, a) => partialSum + a, 0);
-    console.log(sum);
-
-    if (sum > 1) {
-        gifs.forEach(item => {
-            item.style.display = 'none'
-        });
-
-        modalText.innerHTML = 'Вы не можете выбрать более одного городского аэропорта. Для начала моделирования выберите только один.'
-    };
-
-    if (sum < 1) {
+    // GIFS 
+    const sumG = activeGifs.reduce((partialSum, a) => partialSum + a, 0);
+    if (sumG < 1) {
+        hideAllGifs()
         modalText.innerHTML = 'Для начала моделирования выберите аэропорт города.'
     }
+    if (sumG > 1) {
+        hideAllGifs()
+        modalText.innerHTML = 'Вы не можете выбрать более одного городского аэропорта.<br>Для начала моделирования выберите только один.'
+    };
+
+    // MAPS 
+    const sumM = activeMaps.reduce((partialSum, a) => partialSum + a, 0);
+    if (sumM < 1) {
+        hideAllGifs()
+        modalText.innerHTML = 'Для начала моделирования выберите хотябы одну карту.'
+    }
+    if (sumM > 1) {
+        hideAllGifs()
+        modalText.innerHTML = 'Вы не можете выбрать более одной анимации.<br>Для начала моделирования выберите только одну карту.'
+    };
+
+    if (sumG == 1 & sumM == 1) {
+        showGif(gifSelector, mapSelector)
+    }
+
 })
 
 modalClose.addEventListener('click', () => {
@@ -100,44 +125,33 @@ window.addEventListener('click', (e) => {
 function openModal() {
     modalOvelay.style.display = 'block'
     modalWindow.classList.add('modal__active')
+
     // modal scroll lock
     // document.body.style.overflow = 'hidden'
 }
 
 function closeModal() {
     modalOvelay.style.display = 'none'
-    gifs.forEach((item, i) => {
-        item.style.display = 'none'
-    })
+    hideAllGifs()
 
     modalWindow.classList.remove('modal__active')
     modalText.innerHTML = ''
+
     // modal scroll unlock
     // document.body.style.overflow = ''
 }
 
-/* ANIMATION */
+function hideAllGifs() {
+    gifs.forEach(item => {
+        item.firstElementChild.style.display = 'none'
+        item.lastElementChild.style.display = 'none'
+    })
+}
+function showGif(airport, map) {
+    gifs[airport].children[map].style.display = 'block'
+}
 
-// const btnToStart = document.querySelector('.simulation__button');
-// const checkboxAirport = document.querySelectorAll('.checkbox-round__airport');
-// const checkboxMap = document.querySelectorAll('.checkbox-round__map');
-
-// function startSimulation() {
-//     btnToStart.addEventListener('click', () => {
-//         checkboxAirport.forEach((i) => {
-//             if (i.checked) {
-//                 return console.log(i);
-//             }
-//         })
-//         checkboxMap.forEach((i) => {
-//             if (i.checked) {
-//                 return console.log(i)
-//             }
-//         })
-//     })
-// }
-
-// startSimulation()
+// showGif(0, 1)
 
 
 
