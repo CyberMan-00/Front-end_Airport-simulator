@@ -1,5 +1,6 @@
 // @import 'base/bootstrap-reboot.min';
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 @import './libs/bootstrap-reboot.min';
 
 // base files
@@ -18,7 +19,7 @@ body {
     transition: 1s all;
 }
 .container {
-    max-width: 900px;
+    max-width: 1140px;
     margin: 0 auto;
     padding: 0 20px;
 }

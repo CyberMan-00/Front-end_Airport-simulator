@@ -21,16 +21,16 @@
 
     <section class="main">
         <div class="container">
-            <h1 class="main__title">CIVIL <span>AVIA</span>TION <span>AC</span>ADEMY</h1>
-            <h2 class="main__subtitle">Simulator</h2>
-            <div class="main__data" id="time"></div>
-
             <div class="main__tabs__wrapper">
                 <div class="main__tabs__item">Анимация</div>
                 <div class="main__tabs__item">ATC Ссылки</div>
                 <div class="main__tabs__item">Свидетельство</div>
                 <div class="main__tabs__item">Метео</div>
             </div>
+            <h1 class="main__title">CIVIL <span>AVIA</span>TION <span>AC</span>ADEMY</h1>
+            <h2 class="main__subtitle">Simulator</h2>
+            <div class="main__data" id="time"></div>
+
         </div>
     </section>
 
@@ -45,19 +45,19 @@
                             <div class="separator"></div>
                             <div class="item__choice">
                                 <div class="txt">Астана (UACC)</div>
-                                <input data-simulation id="ASTANA" type="checkbox">
+                                <input data-city id="ASTANA" type="checkbox">
                             </div>
                             <div class="item__choice">
                                 <div class="txt">Алматы (UAAA)</div>
-                                <input data-simulation id='ALMATY' type="checkbox">
+                                <input data-city id='ALMATY' type="checkbox">
                             </div>
                             <div class="item__choice">
                                 <div class="txt">Шымкент (UAII)</div>
-                                <input data-simulation id='SHYMKENT' type="checkbox">
+                                <input data-city id='SHYMKENT' type="checkbox">
                             </div>
                             <div class="item__choice">
                                 <div class="txt">Актобе (UATT)</div>
-                                <input data-simulation id='AKTOBE' type="checkbox">
+                                <input data-city id='AKTOBE' type="checkbox">
                             </div>
                         </div>
                         <div class="tab-content__item">
@@ -65,11 +65,11 @@
                             <div class="separator"></div>
                             <div class="item__choice">
                                 <div class="txt">SID</div>
-                                <input type="checkbox">
+                                <input data-map id="SID" type="checkbox">
                             </div>
                             <div class="item__choice">
                                 <div class="txt">STAR</div>
-                                <input type="checkbox">
+                                <input data-map id="STAR" type="checkbox">
                             </div>
                         </div>
                         <button class="tab-content__button">СТАРТ</button>
@@ -259,17 +259,21 @@
         <div class="modal">
             <div class="modal__text"></div>
             <div class="modal__picture__wrapper">
-                <div class="modal__picture__item">
-                    <img data-simpic src="img/simulation_astana.png" alt="ASTANA">
+                <div data-simpic class="modal__picture__item">
+                    <img src="img/astana_sid.gif" alt="ASTANA">
+                    <img src="img/astana_star.gif" alt="ASTANA">
                 </div>
-                <div class="modal__picture__item">
-                    <img data-simpic src="img/simulation_almaty.png" alt="ALMATY">
+                <div data-simpic class="modal__picture__item">
+                    <img src="img/almaty_sid.gif" alt="ALMATY">
+                    <img src="img/almaty_star.gif" alt="ALMATY">
                 </div>
-                <div class="modal__picture__item">
-                    <img data-simpic src="img/simulation_shymkent.png" alt="SHYMKENT">
+                <div data-simpic class="modal__picture__item">
+                    <img src="img/shymkent_sid.gif" alt="SHYMKENT">
+                    <img src="img/shymkent_star.gif" alt="SHYMKENT">
                 </div>
-                <div class="modal__picture__item">
-                    <img data-simpic src="img/simulation_aktobe.png" alt="AKTOBE">
+                <div data-simpic class="modal__picture__item">
+                    <img src="img/aktobe_sid.gif" alt="AKTOBE">
+                    <img src="img/aktobe_star.gif" alt="AKTOBE">
                 </div>
             </div>
             <div class="modal__cross">
